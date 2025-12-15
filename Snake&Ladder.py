@@ -29,10 +29,21 @@ while not win:
         print(f"its {option_name[0]} ")
     elif option == 1:
         print(f"its {option_name[1]} ")
-        players[current_player] += dice_val
+        if players[current_player] + dice_val > 100:
+            pass
+        else:
+            players[current_player] += dice_val
+
+            # checking the win
+        if players[current_player] ==100:
+            win =True
     else:
          print(f"its {option_name[2]} ")
-         players[current_player] -= dice_val
+         if players[current_player] - dice_val <= 0:
+             players[current_player] = 0
+         
+         
+     
 
     print(f"player posction {current_player}: {players[current_player]}")     
                      
